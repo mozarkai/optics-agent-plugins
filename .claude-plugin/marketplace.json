@@ -1,0 +1,17 @@
+{
+  "name": "optics-agent-plugins",
+  "description": "Claude Code plugins for Optics, open-source UI test automation for Android, iOS, smart TVs and web.",
+  "owner": {
+    "name": "Optics maintainers",
+    "url": "https://optics-framework.org"
+  },
+  "plugins": [
+    {
+      "name": "optics-framework",
+      "source": "./plugins/optics-framework",
+      "description": "Drive Android, iOS, TV and browser sessions through the Optics MCP server, and write Optics CSV/YAML test suites.",
+      "category": "testing",
+      "tags": ["test-automation", "mcp", "appium", "android", "ios", "smart-tv", "playwright"]
+    }
+  ]
+}

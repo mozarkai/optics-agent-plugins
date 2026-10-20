@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "optics": {
+      "command": "uvx",
+      "args": ["--from", "optics-framework[mcp,appium,playwright]==1.11.0", "optics", "mcp"]
+    }
+  }
+}
