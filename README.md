@@ -36,12 +36,15 @@ plugins/optics-framework/
   uvx --from "optics-framework[mcp,appium,playwright]==1.11.0" playwright install chromium
   ```
 
-The first start downloads the package and can take a minute or two, longer than some clients
-wait for an MCP server. Warm the cache once before you start your agent:
+The first start downloads the package and can take a minute or two. Claude Code gives an MCP
+server 30 seconds to start, so on a fresh machine the server shows as failed in `/mcp` until the
+download finishes. Warm the cache once before you start your agent:
 
 ```shell
 uvx --from "optics-framework[mcp,appium,playwright]==1.11.0" optics --version
 ```
+
+Or start Claude Code with a longer limit, such as `MCP_TIMEOUT=180000 claude`.
 
 ## Install in Claude Code
 
