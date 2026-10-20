@@ -1,0 +1,16 @@
+{
+  "name": "optics-agent-plugins",
+  "owner": {
+    "name": "Optics maintainers"
+  },
+  "metadata": {
+    "description": "Cursor plugins for Optics, open-source UI test automation for Android, iOS, smart TVs and web."
+  },
+  "plugins": [
+    {
+      "name": "optics-framework",
+      "source": "./plugins/optics-framework",
+      "description": "Drive Android, iOS, TV and browser sessions through the Optics MCP server, and write Optics CSV/YAML test suites."
+    }
+  ]
+}

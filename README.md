@@ -3,10 +3,11 @@
 Agent plugins and skills for [Optics](https://optics-framework.org) (`optics-framework` on PyPI),
 open-source test automation for Android, iOS, Android TV, Samsung Tizen, LG webOS and web.
 
-This repo is two things at once:
+This repo is three things at once:
 
 - a **Claude Code plugin marketplace** with one plugin, `optics-framework`, which adds the Optics
   MCP server and a skill that teaches the agent the Optics suite format;
+- a **Cursor plugin** repo with the same plugin, for the Cursor Marketplace;
 - a **skills repo** that [skills.sh](https://skills.sh) can install into Claude Code, Cursor,
   Codex and other agents.
 
@@ -16,11 +17,14 @@ type, and then write what it did as a CSV or YAML test suite that `optics execut
 ## What's inside
 
 ```text
-.claude-plugin/marketplace.json                          marketplace "optics-agent-plugins"
+.claude-plugin/marketplace.json                          Claude Code marketplace "optics-agent-plugins"
+.cursor-plugin/marketplace.json                          Cursor marketplace manifest
 plugins/optics-framework/
-  .claude-plugin/plugin.json                             plugin manifest
-  .mcp.json                                              starts `optics mcp` (optics-framework 1.11.0)
-  skills/optics-framework/SKILL.md                       the skill (shared by Claude Code and skills.sh)
+  .claude-plugin/plugin.json                             Claude Code plugin manifest
+  .cursor-plugin/plugin.json                             Cursor plugin manifest
+  .mcp.json                                              starts `optics mcp` (optics-framework 1.11.0), used by both
+  skills/optics-framework/SKILL.md                       the skill (shared by Claude Code, Cursor and skills.sh)
+  assets/logo.svg                                        logo
 ```
 
 ## Requirements
@@ -62,6 +66,13 @@ claude plugin install optics-framework@optics-agent-plugins
 
 Then ask something like "open https://example.com in a browser with Optics and list what's on the
 page".
+
+## Install in Cursor
+
+Once the plugin is listed in the [Cursor Marketplace](https://cursor.com/marketplace), open
+**Customize**, search for "Optics" and select **Install**. To try it before then, copy
+`plugins/optics-framework` to `~/.cursor/plugins/local/optics-framework` and reload the window.
+The same uv requirement and first-start download apply.
 
 ## Install the skill with skills.sh
 
