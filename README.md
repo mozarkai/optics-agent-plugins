@@ -24,7 +24,7 @@ plugins/optics-framework/
   .cursor-plugin/plugin.json                             Cursor plugin manifest
   .mcp.json                                              starts `optics mcp` (optics-framework 1.11.0), used by both
   skills/optics-framework/SKILL.md                       the skill (shared by Claude Code, Cursor and skills.sh)
-  assets/logo.svg                                        logo
+  assets/logo.svg, logo-plate.svg                        logo (transparent, and on a white plate)
 ```
 
 ## Requirements
