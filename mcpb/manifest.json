@@ -1,0 +1,220 @@
+{
+  "manifest_version": "0.4",
+  "name": "optics-framework",
+  "display_name": "Optics",
+  "version": "1.11.0",
+  "description": "Drive Android, iOS, smart TV and web sessions from your agent, then save the steps as CSV/YAML test suites.",
+  "long_description": "Optics (`optics-framework` on PyPI, Apache-2.0) is open-source UI test automation for Android, iOS, Android TV, Samsung Tizen, LG webOS and web. This bundle runs its local MCP server (`optics mcp`) so an agent can open a session, read the screen as a compact element list or screenshot, tap, type and swipe, and assert on what it sees. Elements fall back from XPath to visible text to OCR to image matching.\n\nThe agent can then write what it did as a CSV or YAML suite (read the `optics://project-format` resource) that `optics execute` runs in CI.\n\nRequirements: uv on your PATH (it installs Python 3.12+ and the package on first start, which can take a minute or two). For Android, iOS and TV, a running Appium server with the UiAutomator2 or XCUITest driver. For web, a Playwright Chromium build (`uvx --from \"optics-framework[mcp,appium,playwright]==1.11.0\" playwright install chromium`). The server calls no AI service and needs no account or API key.",
+  "author": {
+    "name": "Optics maintainers",
+    "url": "https://optics-framework.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mozarkai/optics-framework"
+  },
+  "homepage": "https://optics-framework.org",
+  "documentation": "https://optics-framework.org/docs/reference/mcp",
+  "support": "https://github.com/mozarkai/optics-framework/issues",
+  "icon": "icon.png",
+  "server": {
+    "type": "uv",
+    "entry_point": "src/server.py",
+    "mcp_config": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "${__dirname}",
+        "src/server.py"
+      ]
+    }
+  },
+  "tools": [
+    {
+      "name": "start_session",
+      "description": "Start a new optics session and launch the target app."
+    },
+    {
+      "name": "terminate_session",
+      "description": "Terminate a session and release its driver/resources."
+    },
+    {
+      "name": "screenshot",
+      "description": "Capture the current screen and return it as a rendered PNG image."
+    },
+    {
+      "name": "clear_element_text",
+      "description": "Clear text from a specified element."
+    },
+    {
+      "name": "detect_and_press",
+      "description": "Press an element if it appears within ``timeout``; otherwise do nothing."
+    },
+    {
+      "name": "enter_number",
+      "description": "Enter a specified number into an element."
+    },
+    {
+      "name": "enter_text",
+      "description": "Enter text into a specified element."
+    },
+    {
+      "name": "enter_text_direct",
+      "description": "Enter text using the keyboard."
+    },
+    {
+      "name": "enter_text_using_keyboard",
+      "description": "Enter text or press a special key using the keyboard."
+    },
+    {
+      "name": "execute_script",
+      "description": "Execute JavaScript/script in the current context."
+    },
+    {
+      "name": "get_text",
+      "description": "Get the text from a specified element."
+    },
+    {
+      "name": "go_back",
+      "description": "Go back one screen: browser history on the web, the back button on a phone."
+    },
+    {
+      "name": "press_checkbox",
+      "description": "Press a specified checkbox element."
+    },
+    {
+      "name": "press_element",
+      "description": "Press a specified element."
+    },
+    {
+      "name": "press_keycode",
+      "description": "Press a device key by keycode, for system/hardware keys with no on-screen element."
+    },
+    {
+      "name": "press_radio_button",
+      "description": "Press a specified radio button."
+    },
+    {
+      "name": "scroll",
+      "description": "Scroll the current view one step in a direction."
+    },
+    {
+      "name": "scroll_from_element",
+      "description": "Perform a scroll action starting from a specified element."
+    },
+    {
+      "name": "scroll_until_element_appears",
+      "description": "Scroll in a specified direction until an element appears."
+    },
+    {
+      "name": "select_dropdown_option",
+      "description": "Open a dropdown and select one of its options, scrolling through the list if needed."
+    },
+    {
+      "name": "sleep",
+      "description": "Sleep for a specified duration."
+    },
+    {
+      "name": "swipe",
+      "description": "Swipe from a point in a specified direction."
+    },
+    {
+      "name": "swipe_by_percentage",
+      "description": "Swipe from a screen position, given in percentages, in a specified direction."
+    },
+    {
+      "name": "swipe_from_element",
+      "description": "Perform a swipe action starting from a specified element."
+    },
+    {
+      "name": "swipe_seekbar_to_right_android",
+      "description": "Swipe a seekbar to the right."
+    },
+    {
+      "name": "swipe_until_element_appears",
+      "description": "Swipe in a specified direction until an element appears."
+    },
+    {
+      "name": "close_and_terminate_app",
+      "description": "Tears down the active driver session and flushes all pending events."
+    },
+    {
+      "name": "force_terminate_app",
+      "description": "Forcefully terminates the specified application."
+    },
+    {
+      "name": "get_app_version",
+      "description": "Gets the version of the application."
+    },
+    {
+      "name": "get_driver_session_id",
+      "description": "Return the current driver session id, if available."
+    },
+    {
+      "name": "initialise_setup",
+      "description": "Sets up the environment for the driver module."
+    },
+    {
+      "name": "launch_app",
+      "description": "Launches the specified application."
+    },
+    {
+      "name": "launch_other_app",
+      "description": "Starts another application."
+    },
+    {
+      "name": "start_appium_session",
+      "description": "Starts an Appium session."
+    },
+    {
+      "name": "assert_equality",
+      "description": "Compares two values for equality."
+    },
+    {
+      "name": "assert_presence",
+      "description": "Asserts the presence of elements anywhere in the page or DOM, visible or not."
+    },
+    {
+      "name": "assert_visibility",
+      "description": "Asserts that elements are rendered and visible on screen right now, not just present in the page or DOM."
+    },
+    {
+      "name": "get_interactive_elements",
+      "description": "Retrieves a list of interactive elements on the current screen."
+    },
+    {
+      "name": "is_element",
+      "description": "Checks if the specified element is in a given state (e.g., Enabled/Disabled/Visible/Invisible)."
+    },
+    {
+      "name": "validate_element",
+      "description": "Verifies the specified element."
+    },
+    {
+      "name": "validate_screen",
+      "description": "Verifies the specified screen by checking element presence."
+    }
+  ],
+  "compatibility": {
+    "platforms": [
+      "darwin",
+      "linux",
+      "win32"
+    ],
+    "runtimes": {
+      "python": ">=3.12"
+    }
+  },
+  "keywords": [
+    "test-automation",
+    "appium",
+    "android",
+    "ios",
+    "smart-tv",
+    "playwright",
+    "selenium",
+    "ocr"
+  ],
+  "license": "Apache-2.0"
+}

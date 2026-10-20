@@ -1,0 +1,24 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "org.optics-framework/optics",
+  "title": "Optics",
+  "description": "Drive Android, iOS, smart TV and web apps from an agent, then save the steps as CSV/YAML test suites.",
+  "repository": {
+    "url": "https://github.com/mozarkai/optics-agent-plugins",
+    "source": "github",
+    "subfolder": "mcpb"
+  },
+  "websiteUrl": "https://optics-framework.org",
+  "version": "1.11.0",
+  "packages": [
+    {
+      "registryType": "mcpb",
+      "identifier": "https://github.com/mozarkai/optics-agent-plugins/releases/download/mcpb-v1.11.0/optics-framework-1.11.0.mcpb",
+      "version": "1.11.0",
+      "fileSha256": "9db4696f332c20627ac9e90415e3b17657be114a5f1ea3f366e788cb38a03ba3",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

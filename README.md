@@ -111,6 +111,19 @@ pip install "optics-framework[mcp,appium,playwright]==1.11.0"
 
 If the client can't find `optics`, use its full path (`which optics`).
 
+## MCP bundle and MCP Registry
+
+`mcpb/` is the source of an [MCPB](https://github.com/modelcontextprotocol/mcpb) bundle that starts
+the same server with `uv run`, so nothing is vendored; it needs `uv` on the PATH. Each release
+attaches the packed `.mcpb`, which installs in Claude Desktop with a double-click.
+
+`server.json` lists that bundle in the official MCP Registry as `org.optics-framework/optics`.
+To release a new version: bump the pin in `mcpb/pyproject.toml` and `version` in
+`mcpb/manifest.json`, run `npx @anthropic-ai/mcpb pack mcpb optics-framework-<ver>.mcpb`, attach
+it to a `mcpb-v<ver>` release, then update `version`, `identifier` and `fileSha256` in
+`server.json` and run `mcp-publisher login dns --domain optics-framework.org` and
+`mcp-publisher publish`.
+
 ## Learn more
 
 - [Optics docs](https://optics-framework.org/docs/get-started/index.md) and the
