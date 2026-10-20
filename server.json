@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "org.optics-framework/optics",
   "title": "Optics",
-  "description": "Drive Android, iOS, smart TV and web apps from an agent, then save the steps as CSV/YAML test suites.",
+  "description": "Drive Android, iOS, smart TV and web apps from an agent; save the steps as CSV/YAML test suites.",
   "repository": {
     "url": "https://github.com/mozarkai/optics-agent-plugins",
     "source": "github",
